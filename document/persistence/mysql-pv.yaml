@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-pv
+spec:
+  capacity:
+    storage: 5Gi  # 根据你的需求调整存储大小
+  accessModes:
+    - ReadWriteOnce  # 设置访问模式
+  persistentVolumeReclaimPolicy: Retain
+  csi:
+    driver: dobs.csi.digitalocean.com
+    volumeHandle: volume-sgp1-01  # 使用 DigitalOcean Volumes 的 ID
+    fsType: ext4
