@@ -25,10 +25,3 @@ spec:
               value: single-node
             - name: ES_JAVA_OPTS
               value: "-Xms512m -Xmx1024m"
-          volumeMounts:
-            - name: es-persistent-storage
-              mountPath: /usr/share/elasticsearch/data
-      volumes:
-        - name: es-persistent-storage
-          persistentVolumeClaim:
-            claimName: es-pv-claim

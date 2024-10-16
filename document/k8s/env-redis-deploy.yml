@@ -20,10 +20,3 @@ spec:
           image: redis:7
           ports:
             - containerPort: 6379
-          volumeMounts:
-            - name: redis-persistent-storage
-              mountPath: /data
-      volumes:
-        - name: redis-persistent-storage
-          persistentVolumeClaim:
-            claimName: redis-pv-claim
